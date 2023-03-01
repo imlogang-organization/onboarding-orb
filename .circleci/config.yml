@@ -31,6 +31,8 @@ workflows:
       # Triggers the next workflow in the Orb Development Kit.
       - orb-tools/continue:
           pipeline-number: << pipeline.number >>
+          circleci-api-host: https://gcp.logangodsey.com
+          circleci-app-host: https://app.gcp.logangodsey.com
           vcs-type: << pipeline.project.type >>
           requires: [orb-tools/publish]
           filters: *filters
